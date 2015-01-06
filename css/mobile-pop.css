@@ -1,0 +1,132 @@
+#mp-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 9999999;
+  text-align: center;
+}
+#mp-container:before {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -.25em;
+  height: 100%;
+  content: '';
+}
+#mp-container #mp-bg {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #000;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+#mp-container #mp-close {
+  background: none;
+  position: fixed;
+  z-index: 3;
+  border: none;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+  color: #ccc;
+  -webkit-appearance: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  cursor: pointer;
+  top: -8px;
+  right: 0px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#mp-container #mp-close:focus {
+  outline: none;
+}
+#mp-container #mp-box {
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  vertical-align: middle;
+  -moz-box-shadow: 0px 0px 10px 1px black;
+  -webkit-box-shadow: 0px 0px 10px 1px black;
+  box-shadow: 0px 0px 10px 1px black;
+  width: 97%;
+}
+@media all and (orientation: landscape) {
+  #mp-container #mp-box {
+    max-width: 70%;
+    max-height: 90%;
+    overflow-y: scroll;
+    overflow-x: visible;
+  }
+}
+@media all and (orientation: landscape) {
+  #mp-container #mp-box #mp-content {
+    overflow-x: hidden;
+  }
+}
+#mp-container #mp-box.mp-youtube-box {
+  background-color: transparent;
+}
+@media all and (orientation: landscape) {
+  #mp-container #mp-box.mp-youtube-box {
+    max-width: 70%;
+    overflow: visible;
+    max-height: inherit;
+  }
+}
+#mp-container #mp-box.mp-youtube-box #mp-content {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+#mp-container #mp-box.mp-youtube-box #mp-close {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -24px;
+  right: 0px;
+  display: block;
+  float: right;
+  color: #ccc;
+  font-family: monospace;
+  line-height: 16px;
+  font-size: 34px;
+}
+@media all and (orientation: landscape) {
+  #mp-container #mp-box.mp-youtube-box #mp-close {
+    font-size: 24px;
+    top: -20px;
+  }
+}
+#mp-container #mp-box.mp-youtube-box #mp-close:hover {
+  color: white;
+}
+#mp-container #mp-box.mp-youtube-box .mp-youtube-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+#mp-container #mp-box.mp-youtube-box .mp-youtube-wrapper.fullscreen {
+  padding-bottom: 75%;
+}
+#mp-container #mp-box.mp-youtube-box .mp-youtube-wrapper iframe {
+  -moz-box-shadow: 0px 0px 10px 1px black;
+  -webkit-box-shadow: 0px 0px 10px 1px black;
+  box-shadow: 0px 0px 10px 1px black;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
